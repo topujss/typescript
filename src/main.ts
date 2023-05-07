@@ -102,5 +102,78 @@
 // const genericLearn = <generic>(val: generic): generic => {
 //   return val;
 // };
-
 // genericLearn('John Doe');
+
+/**
+ * @class in TypeScript learn
+ * @public anyone can, default
+ * @protected inside the class and it's child class
+ * @private only inside the person class
+ */
+// abstract class Person {
+//   public name: string;
+//   private age: number;
+//   protected isAdmin: boolean;
+
+//   constructor(name: string, age: number, isAdmin: boolean) {
+//     this.name = name;
+//     this.age = age;
+//     this.isAdmin = isAdmin;
+//   }
+
+//   protected showInfo(): void {
+//     console.log(`My name is ${this.name}, I'm ${this.age} years old.`);
+//   }
+// }
+// class Member extends Person {
+//   constructor(name: string, age: number, isAdmin: boolean) {
+//     super(name, age, isAdmin);
+//   }
+//   public showInformation(): string {
+//     return `${this.name} is ${this.isAdmin} years old.`;
+//   }
+// }
+// const person = new Person('John Doe', 20, true);
+// console.log(person);
+// console.log(person.showInfo());
+
+// to stop from using instance of a class
+// abstract class Car {}
+// const car = new Car();
+
+/**
+ * @interface in TypeScript learn
+ * it can return function too
+ */
+
+interface User {
+  name: string;
+  age: number;
+  isAdmin: boolean;
+  skill: string[];
+  ageCount(): void;
+}
+
+interface Apps {
+  open(): void;
+  error(): never;
+}
+
+abstract class online implements User, Apps {
+  public name: string = 'asha';
+  public age: number = 20;
+  public isAdmin: boolean = true;
+  public skill: string[] = ['MERN', 'GO', 'PYTHON'];
+
+  public ageCount(): void {
+    console.log(this.age);
+  }
+
+  public open(): void {
+    console.log('open');
+  }
+
+  public error(): never {
+    throw new Error('error');
+  }
+}
