@@ -145,36 +145,35 @@
  * @interface in TypeScript learn
  * it can return function too
  */
+// interface User {
+//   name: string;
+//   age: number;
+//   isAdmin: boolean;
+//   skill: string[];
+//   ageCount(): void;
+// }
 
-interface User {
-  name: string;
-  age: number;
-  isAdmin: boolean;
-  skill: string[];
-  ageCount(): void;
-}
+// interface Apps {
+//   open(): void;
+//   error(): never;
+// }
 
-interface Apps {
-  open(): void;
-  error(): never;
-}
+// abstract class online implements User, Apps {
+//   public name: string = 'asha';
+//   public age: number = 20;
+//   public isAdmin: boolean = true;
+//   public skill: string[] = ['MERN', 'GO', 'PYTHON'];
 
-abstract class online implements User, Apps {
-  public name: string = 'asha';
-  public age: number = 20;
-  public isAdmin: boolean = true;
-  public skill: string[] = ['MERN', 'GO', 'PYTHON'];
+//   public ageCount(): void {
+//     console.log(this.age);
+//   }
 
-  public ageCount(): void {
-    console.log(this.age);
-  }
+//   public open(): void {
+//     console.log('open');
+//   }
 
-  public open(): void {
-    console.log('open');
-  }
-
-  public error(): never {
-    throw new Error('error');
-  }
-}
+//   public error(): never {
+//     throw new Error('error');
+//   }
+// }
 // end of class
