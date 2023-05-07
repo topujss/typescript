@@ -177,3 +177,4 @@ abstract class online implements User, Apps {
     throw new Error('error');
   }
 }
+// end of class

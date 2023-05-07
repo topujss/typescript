@@ -27,3 +27,4 @@ class online {
         throw new Error('error');
     }
 }
+// end of class
