@@ -106,38 +106,34 @@
 /**
  * @enum_and_type_narrowing learn in TypeScript
  */
-enum skills {
-  MERN = 'MERN stack',
-  GO = 'GO stack',
-  PYTHON = 'PYTHON stack',
-  RUBY = 'RUBY stack',
-}
-const skill = skills.MERN || skills.GO;
-console.log(skill);
+// enum skills {
+//   MERN = 'MERN stack',
+//   GO = 'GO stack',
+//   PYTHON = 'PYTHON stack',
+//   RUBY = 'RUBY stack',
+// }
+// const skill = skills.MERN || skills.GO;
+// console.log(skill);
 
 // type narrowing
-// const info = (val: string | number) => {
-//   if (typeof val === 'string') {
-//     return val.toUpperCase();
-//   }
-//   return val + 482;
+// const info = (val: number | string) => {
+//   if (typeof val === 'string') return val.charAt(0);
+//   return val / 482;
 // };
-
-// console.log(info('my work is good'));
+// console.log(info('844'));
 
 /**
- * @desc TypeScript generic type learn
+ * @Generic type learn in TypeScript
  * @genericType use when you don't know what type of data will be passed in the function
  */
-
-// const genericLearn = <generic>(val: generic): generic => {
+// const genericLearn = <G>(val: Array<G>): Array<G> => {
 //   return val;
 // };
-// genericLearn('John Doe');
+// console.log(genericLearn([true]));
 
-/**
+/** 2nd part
  * @class in TypeScript learn
- * @public anyone can, default
+ * @public anyone can use, default
  * @protected inside the class and it's child class
  * @private only inside the person class
  */
@@ -172,10 +168,66 @@ console.log(skill);
 // abstract class Car {}
 // const car = new Car();
 
+// class Car {
+//   make: string;
+//   model: string;
+//   private year: number;
+//   protected isSold: boolean;
+
+//   constructor(make: string, model: string, year: number, isSold: boolean) {
+//     this.make = make;
+//     this.model = model;
+//     this.year = year;
+//     this.isSold = isSold;
+//   }
+// }
+// const car = new Car('bmw', 'm3', 2022, true);
+
+// class Dealer extends Car {
+//   constructor(make: string, model: string, year: number, issold: boolean) {
+//     super(make, model, year, issold);
+//   }
+
+//   protected dealer(): string {
+//     return 'im from dealer extends car class';
+//   }
+// }
+
+// const dealer = new Dealer('bmw', 'm3', 2933, false);
+// console.log(dealer.dealer());
+
 /**
  * @interface in TypeScript learn
- * it can return function too
+ * - it can return function too
  */
+interface RoadInterface {
+  name: string;
+  money: number;
+  dirt: number;
+  isOpen: boolean;
+  work(): void;
+}
+
+interface SideInterface {
+  path(): boolean;
+  drain(): string;
+}
+
+class Road implements RoadInterface, SideInterface {
+  public name: string = 'salaman st';
+  public money: number = 84224;
+  public dirt: number = 84;
+  public isOpen: boolean = true;
+
+  work(): void {}
+  path(): boolean {
+    return false;
+  }
+  drain(): string {
+    return 'working';
+  }
+}
+
 // interface User {
 //   name: string;
 //   age: number;
